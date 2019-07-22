@@ -1,0 +1,14 @@
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.csprojAssemblyReference.cache
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.csproj.CoreCompileInputs.cache
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.RazorAssemblyInfo.cache
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.RazorAssemblyInfo.cs
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.AssemblyInfoInputs.cache
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.AssemblyInfo.cs
+C:\Users\775421\Documents\Git\HelloWorld.API\bin\Debug\netcoreapp2.2\HelloWorld.API.deps.json
+C:\Users\775421\Documents\Git\HelloWorld.API\bin\Debug\netcoreapp2.2\HelloWorld.API.runtimeconfig.json
+C:\Users\775421\Documents\Git\HelloWorld.API\bin\Debug\netcoreapp2.2\HelloWorld.API.runtimeconfig.dev.json
+C:\Users\775421\Documents\Git\HelloWorld.API\bin\Debug\netcoreapp2.2\HelloWorld.API.dll
+C:\Users\775421\Documents\Git\HelloWorld.API\bin\Debug\netcoreapp2.2\HelloWorld.API.pdb
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.RazorTargetAssemblyInfo.cache
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.dll
+C:\Users\775421\Documents\Git\HelloWorld.API\obj\Debug\netcoreapp2.2\HelloWorld.API.pdb
