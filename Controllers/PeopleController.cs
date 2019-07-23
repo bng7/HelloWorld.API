@@ -51,7 +51,7 @@ namespace HelloWorld.API.Controllers
 
         }
 
-        [HttpPut]
+        [HttpPut("{name}")]
         public async Task<IActionResult> UpdatePersonAsync(string name, [FromBody] Person person)
         {
             if  (!ModelState.IsValid)
@@ -59,7 +59,7 @@ namespace HelloWorld.API.Controllers
                 return BadRequest("Format incorrect.");
             }
 
-            var result = await _personRepository.UpdatePersonAsync(name, person);
+            await _personRepository.UpdatePersonAsync(name, person);
 
             return NoContent();
         }
