@@ -9,6 +9,6 @@ namespace HelloWorld.API.Services
         Task<IEnumerable<Person>> ListPeopleAsync();
         Task<Person> GetPersonAsync(int id);
         Task AddPersonAsync(Person person);
-        Task UpdatePersonAsync(string name, Person person);
+        Task UpdatePersonAsync(string name, Person newPerson);
     }
 }

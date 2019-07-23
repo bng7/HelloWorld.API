@@ -39,10 +39,10 @@ namespace HelloWorld.API.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdatePersonAsync(string name, Person person)
+        public async Task UpdatePersonAsync(string name, Person newPerson)
         {
-            var personEntry = _context.People.First(p => p.Name == name);
-            personEntry.Name = person.Name;
+            var oldPerson = _context.People.First(p => p.Name == name);
+            oldPerson.Name = newPerson.Name;
             await _context.SaveChangesAsync();
         }
     }

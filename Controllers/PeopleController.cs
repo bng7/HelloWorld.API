@@ -52,14 +52,14 @@ namespace HelloWorld.API.Controllers
         }
 
         [HttpPut("{name}")]
-        public async Task<IActionResult> UpdatePersonAsync(string name, [FromBody] Person person)
+        public async Task<IActionResult> UpdatePersonAsync(string name, [FromBody] Person newPerson)
         {
             if  (!ModelState.IsValid)
             {
                 return BadRequest("Format incorrect.");
             }
 
-            await _personRepository.UpdatePersonAsync(name, person);
+            await _personRepository.UpdatePersonAsync(name, newPerson);
 
             return NoContent();
         }
