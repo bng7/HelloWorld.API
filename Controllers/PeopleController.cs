@@ -56,7 +56,7 @@ namespace HelloWorld.API.Controllers
         {
             if  (!ModelState.IsValid)
             {
-                return BadRequest("Format incorrect.");
+                return BadRequest("Body format incorrect.");
             }
 
             await _personRepository.UpdatePersonAsync(name, newPerson);
@@ -67,6 +67,11 @@ namespace HelloWorld.API.Controllers
         [HttpDelete("{name}")]
         public async Task<IActionResult> DeletePersonAsync(string name)
         {
+            if (name == "Bazza B")
+            {
+                return BadRequest("The master cannot be deleted.")
+            }
+
             await _personRepository.DeletePersonAsync(name);
 
             return NoContent();
