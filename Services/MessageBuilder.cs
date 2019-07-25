@@ -23,11 +23,29 @@ namespace HelloWorld.API.Services
             DateTime date = DateTime.Now;
 
             string message = "Hello ";
+
+            int counter = people.Count() - 2;
             
             foreach (Person person in people)
             {
                 message += person.Name;
-                message += ", ";
+
+                if (counter > 0)
+                {
+                    message += ", ";
+                }
+
+                if (counter == 0)
+                {
+                    message += " and ";
+                }
+
+                if (counter < 0)
+                {
+                    message += " ";
+                }
+
+                counter--;
             }
             message += $"- the time on the server is {date.ToString("t")} on {date.ToString("dd MMMM yyyy")}.";
 
