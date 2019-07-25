@@ -10,5 +10,6 @@ namespace HelloWorld.API.Services
         Task<Person> GetPersonAsync(int id);
         Task AddPersonAsync(Person person);
         Task UpdatePersonAsync(string name, Person newPerson);
+        Task DeletePersonAsync(string name);
     }
 }

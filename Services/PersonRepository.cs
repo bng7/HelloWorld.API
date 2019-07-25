@@ -41,9 +41,16 @@ namespace HelloWorld.API.Services
 
         public async Task UpdatePersonAsync(string name, Person newPerson)
         {
-            var oldPerson = _context.People.First(p => p.Name == name);
+            var oldPerson = _context.People.Single(p => p.Name == name);
             oldPerson.Name = newPerson.Name;
             await _context.SaveChangesAsync();
+        }
+
+        public async Task DeletePersonAsync(string name)
+        {
+            _context.Remove(_context.People.Single(p => p.Name == name));
+            await _context.SaveChangesAsync();
+            
         }
     }
 }

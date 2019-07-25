@@ -63,5 +63,13 @@ namespace HelloWorld.API.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{name}")]
+        public async Task<IActionResult> DeletePersonAsync(string name)
+        {
+            await _personRepository.DeletePersonAsync(name);
+
+            return NoContent();
+        }
     }
 }
