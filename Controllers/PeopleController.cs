@@ -12,16 +12,24 @@ namespace HelloWorld.API.Controllers
     public class PeopleController : ControllerBase
     {
         protected IPersonRepository _personRepository;
+        protected IMessageBuilder _messageBuilder;
 
-        public PeopleController(IPersonRepository personRepository)
+        public PeopleController(IPersonRepository personRepository, IMessageBuilder messageBuilder)
         {
             _personRepository = personRepository;
+            _messageBuilder = messageBuilder;
         }
 
         [HttpGet]
         public async Task<IEnumerable<Person>> ListPeopleAsync()
         {
             return await _personRepository.ListPeopleAsync();
+        }
+
+        [HttpGet("greeting")]
+        public async Task<string> GetMessageAsync()
+        {
+            return await _messageBuilder.BuildMessage();
         }
 
         [HttpGet("{id}")]
@@ -42,7 +50,12 @@ namespace HelloWorld.API.Controllers
         {
             if  (!ModelState.IsValid)
             {
-                return BadRequest("Format incorrect.");
+                return BadRequest("Body format incorrect.");
+            }
+
+            if (_personRepository.CheckPresence(person.Name))
+            {
+                return BadRequest($"Add failed, {person.Name} already exists.");
             }
             
             await _personRepository.AddPersonAsync(person);
@@ -67,9 +80,9 @@ namespace HelloWorld.API.Controllers
         [HttpDelete("{name}")]
         public async Task<IActionResult> DeletePersonAsync(string name)
         {
-            if (name == "Bazza B")
+            if (name == "Bazza")
             {
-                return BadRequest("The master cannot be deleted.")
+                return BadRequest("Bazza cannot be deleted.");
             }
 
             await _personRepository.DeletePersonAsync(name);

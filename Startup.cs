@@ -35,6 +35,7 @@ namespace HelloWorld.API
             });
 
             services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<IMessageBuilder, MessageBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

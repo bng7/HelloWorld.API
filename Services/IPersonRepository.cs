@@ -11,5 +11,6 @@ namespace HelloWorld.API.Services
         Task AddPersonAsync(Person person);
         Task UpdatePersonAsync(string name, Person newPerson);
         Task DeletePersonAsync(string name);
+        bool CheckPresence(string name);
     }
 }

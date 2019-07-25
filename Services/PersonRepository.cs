@@ -18,7 +18,7 @@ namespace HelloWorld.API.Services
 
             if (_context.People.Count() == 0)
             {
-                _context.People.Add(new Person { Name = "Bazza B"});
+                _context.People.Add(new Person { Name = "Bazza"});
                 _context.SaveChangesAsync();
             }
         }
@@ -36,7 +36,7 @@ namespace HelloWorld.API.Services
         public async Task AddPersonAsync(Person person)
         {
             _context.People.Add(person);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();          
         }
 
         public async Task UpdatePersonAsync(string name, Person newPerson)
@@ -48,9 +48,19 @@ namespace HelloWorld.API.Services
 
         public async Task DeletePersonAsync(string name)
         {
-            _context.Remove(_context.People.Single(p => p.Name == name));
+            _context.Remove(_context.People.SingleOrDefault(p => p.Name == name));
             await _context.SaveChangesAsync();
             
+        }
+
+        public bool CheckPresence(string name)
+        {
+            var result = _context.People.FirstOrDefault(p => p.Name == name);
+            if (result != null)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
