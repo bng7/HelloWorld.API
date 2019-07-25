@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Text;
 using HelloWorld.API.Models;
 using HelloWorld.API.Services;
 
@@ -23,16 +22,16 @@ namespace HelloWorld.API.Services
             IEnumerable<Person> people = await _repository.ListPeopleAsync();
             DateTime date = DateTime.Now;
 
-            StringBuilder message = new StringBuilder("Hello ", 50);
+            string message = "Hello ";
             
             foreach (Person person in people)
             {
-                message.Append(person.Name);
-                message.Append(", ");
+                message += person.Name;
+                message += ", ";
             }
-            message.Append($"it is currently {date}.");
+            message += $"- the time on the server is {date.ToString("t")} on {date.ToString("dd MMMM yyyy")}.";
 
-            return message.ToString();
+            return message;
         }
     }
 }
